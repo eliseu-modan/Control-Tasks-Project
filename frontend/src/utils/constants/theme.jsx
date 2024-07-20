@@ -1,11 +1,11 @@
 const ANTD_THEME_SETTINGS = {
 	token: {
-		colorInfo: "#005286",
-		colorPrimary: "#005286",
+		colorInfo: "#16B41D",
+		colorPrimary: "#16B41D",
 		borderRadius: 5,
 		/* fontSize: 16, */
-		fontFamily: "'Montserrat', sans-serif",
-		fontFamilyCode: "'Montserrat'",
+		fontFamily: "Open Sans",
+		fontFamilyCode: "Open Sans",
 		boxShadow: "0 0 20px rgba(0, 0, 0, 0.1)",
 	},
 };

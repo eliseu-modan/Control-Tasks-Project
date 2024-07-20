@@ -6,7 +6,7 @@ const Footer = () => {
     <nav className="navbarWrapperFooter center layout-footer">
       <div className="navbarColumn center">
         <div className="footerText center">
-          <p>Taks 2024 - Desenvolvido internamente</p>
+          <p>Taks 2024</p>
         </div>
       </div>
     </nav>

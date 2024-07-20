@@ -12,7 +12,6 @@ import {
   Modal,
   Row,
   Table,
-  Tag,
   Form,
   Input,
   Checkbox,
@@ -43,13 +42,7 @@ function TasksList({ onEdit, onItemsEdit, filter, ...props }) {
   const navegate = useNavigate();
   const [checkedTasks, setCheckedTasks] = useState([]);
 
-  useEffect(() => {
-    if (socket) {
-      socket.on("update", async () => {
-        await getTasks();
-      });
-    }
-  }, [socket]);
+
 
   useEffect(() => {
     getTasks();
@@ -66,12 +59,11 @@ function TasksList({ onEdit, onItemsEdit, filter, ...props }) {
           checkedTasks: checkedTasks.join(","),
         },
       });
-      console.log("data get", data.dataTasks);
 
       setListTask(data.dataTasks);
       setOriginalEmployeeCount(data.countDataTasks);
-      const ultimoElemento = data.dataTasks[data.dataTasks.length - 1];
-      setUltimoElemento(ultimoElemento.name);
+      const element = data.dataTasks[data.dataTasks.length - 1];
+      setUltimoElemento(element.name);
     } finally {
       setLoading(false);
     }
@@ -92,10 +84,10 @@ function TasksList({ onEdit, onItemsEdit, filter, ...props }) {
 
   function formatDate(dateString) {
     const date = new Date(dateString);
-    const dia = String(date.getDate()).padStart(2, "0");
-    const mes = String(date.getMonth() + 1).padStart(2, "0");
-    const ano = date.getFullYear();
-    return `${dia}/${mes}/${ano}`;
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
   }
   const openModalTask = (task) => {
     setSelectedTask(task);
@@ -190,7 +182,6 @@ function TasksList({ onEdit, onItemsEdit, filter, ...props }) {
             />
             <Button
               icon={<DeleteOutlined />}
-              // onChange={handleCheckboxChange}
               onClick={() => {
                 removeConfirm(taskSelected);
               }}
@@ -230,11 +221,10 @@ function TasksList({ onEdit, onItemsEdit, filter, ...props }) {
   async function onConcluided(taskSelected) {
     try {
       await service.put(`tasks/auth/concluidedTask/${taskSelected.id}`);
-      // window.location.reload();
       message.success(
         `A Tarefa "${taskSelected.name}" foi Concluida com sucesso!`
       );
-      navegate("/Tarefas Concluidas");
+      navegate("/Tarefas-Concluidas");
     } catch (error) {
       message.error(
         `Não foi possível Concluir a Tarefa "${taskSelected.name}"`
@@ -274,11 +264,10 @@ function TasksList({ onEdit, onItemsEdit, filter, ...props }) {
         `/tasks/auth/updateTask/${form.getFieldValue("id")}`,
         values
       );
-      console.log("Dados recebidos:", response.data);
+      getTasks({ page: 1 });
       setIsEditFormVisible(false);
       message.success("Tarefa atualizada com sucesso!");
     } catch (error) {
-      console.error("Erro ao atualizar a tarefa:", error);
       message.error("Não foi possível atualizar a Tarefa.");
     } finally {
       setLoading(false);

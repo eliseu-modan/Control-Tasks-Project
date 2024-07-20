@@ -64,7 +64,6 @@ function CreateTask() {
   const checkTaskPermanent = (event) => {
     setShowDate(event.target.checked);
   };
-  console.log("showDate", showDate);
   return (
     <>
       <Form

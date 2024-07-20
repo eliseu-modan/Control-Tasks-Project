@@ -6,7 +6,7 @@ import {
 import { TasksList } from "../pages/Tasks";
 import { CompletedList } from "../pages";
 import { PermanentsLists } from "../components/PermanentsTasks";
-import { LoginPage, ErrorPage, UsersPage, Meeting } from "../pages";
+import { LoginPage, ErrorPage, UsersPage } from "../pages";
 import { formatRoutes } from "./utils";
 import CustomLayout from "../layouts/Custom";
 import {
@@ -69,37 +69,7 @@ const routes = formatRoutes([
       },
     },
   },
-  {
-    path: "/MinhasReuniões",
-    exact: true,
-    layout: "private",
-    component: Meeting,
-    page: { title: "Reunir-se" },
-    menu: {
-      title: "Reunir-se",
-      icon: ScheduleOutlined,
-      insideSubmenu: {
-        title: "Minhas Reuniões",
-        icon: UnorderedListOutlined,
-      },
-    },
-  },
-  {
-    path: "/MarcarReunião",
-    exact: true,
-    layout: "private",
-    component: Meeting,
-    page: { title: "Marcar Reunião" },
-    menu: {
-      title: "Marcar Reunião",
-      icon: ScheduleOutlined,
-      insideSubmenu: {
-        title: "Marcar Reunião",
-        icon: UnorderedListOutlined,
-      },
-    },
-  },
-
+ 
   {
     path: "/usuarios",
     exact: true,

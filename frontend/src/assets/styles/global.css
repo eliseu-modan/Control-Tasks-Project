@@ -11,83 +11,71 @@ body {
 	--sb-track-color: #232e33;
 	--sb-thumb-color: #005286;
 	--sb-size: 8px;
-	/* scrollbar-color: var(--sb-thumb-color) var(--sb-track-color); */
 }
-
 a {
 	text-decoration: none;
 }
-
 li {
 	list-style: none;
 }
 .login-container{
 	overflow: hidden;
 }
-
 .layout-content-height {
 	height: calc(100vh - 96px);
 	overflow: auto;
 	padding-bottom: 16px;
 	background-color: rgb(220, 220, 220);
 }
-
 .center {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-
 .margin-bottom {
 	margin-bottom: 24px;
 }
-
 .position-sticky {
 	position: sticky;
 	top: 94px;
 }
-
 .width-100 {
 	width: 100%;
 }
-
 .container {
 	
 	max-width: 1500px;
   margin: 0 auto;
   top: 1%;
   height: 45%;
-  
 }
-
+.containerUser {
+	
+	max-width: 1500px;
+  margin: 0 auto;
+  top: 1%;
+  height: 100%;
+}
 ::-webkit-scrollbar {
 	width: var(--sb-size);
 }
-
 ::-webkit-scrollbar-track {
 	background: var(--sb-track-color);
 	border-radius: 30px;
 }
-
 ::-webkit-scrollbar-thumb {
 	background: var(--sb-thumb-color);
 	border-radius: 20px;
-	
 }
-
 #editButtonCancel{
 	position: absolute;
     left: 40%;
 	top: 90%;
-	
 }
-
-
 .custom-form {
 	max-width: 400px;
 	margin: auto;
   }
-  
   .custom-input {
 	width: 100%;
 	padding: 10px;
@@ -96,7 +84,6 @@ li {
 	border-radius: 4px;
 	box-sizing: border-box;
 }
-
   .custom-textarea {
 	width: 100%;
 	padding: 10px;
@@ -106,7 +93,6 @@ li {
 	box-sizing: border-box;
 	
 }
-   
 .custom-button {
 	margin-right: 10px;
 }
@@ -117,12 +103,9 @@ li {
     75% { transform: translateX(10px) rotate(3deg); }
     100% { transform: translateX(0); }
   }
-
   .vibrate {
     animation: shake 1.5s ease-in-out infinite;
   }
-
-
   .ant-alert, .ant-alert-warning, .ant-alert-with-description, .ant-alert-no-icon{
 	position: absolute;
 	left: 35%;
@@ -136,19 +119,12 @@ li {
 	text-align: center;
 	font-size: 14px;
 	border:  solid 2px;
-	
-    
-    
 }
 .editAlert{
 	position: relative;
 	margin: 45px;
 }
-
 #borderColor{
 border: solid #7f7f7f 2px 
 }
-/* .ant-layout-content, .layout-content, .css-dev-only-do-not-override-n2dxhp{
-	background-color: #ddd;
-} */
 

@@ -34,7 +34,7 @@ function UsersPage({ route, ...props }) {
   }
 
   return (
-    <Card className="container">
+    <Card className="containerUser">
       <div className="margin-bottom">
         <CardsFilter onCreate={toggleModal} />
       </div>

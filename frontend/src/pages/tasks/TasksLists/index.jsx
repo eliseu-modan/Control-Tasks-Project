@@ -16,7 +16,7 @@ function ListTask({ route, ...props }) {
   const navigate = useNavigate();
   const [filter, setFilter] = useState({
     sortDirection: 0,
-    search: "", // Include search parameter in the filter
+    search: "",
   });
 
   function onEdit(employee) {

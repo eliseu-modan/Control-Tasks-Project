@@ -20,11 +20,8 @@ function LoginForm() {
       const {
         data: { token, userId },
       } = await service.post("/users/auth/login", values);
-      console.log("data", token, userId);
       localStorage.setItem("token", token);
-
       const tokenDecode = jwtDecode(token);
-
       await setAuthenticationAsync({
         accessToken: `Bearer ${token}`,
         authData: {
@@ -71,7 +68,7 @@ function LoginForm() {
         icon={<LoginOutlined />}
         loading={loading}
         disabled={loading}
-        style={{ background: "#009183", color: "white" }}
+        style={{ background: "#120164", color: "white" }}
       >
         {loading ? "Aguarde..." : "Acessar"}
       </Button>

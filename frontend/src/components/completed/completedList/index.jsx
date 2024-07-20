@@ -1,3 +1,6 @@
+
+/* Component completedList */
+
 import React, { useState, useEffect } from "react";
 import { Table, Button, Modal } from "antd";
 import { useService } from "../../../contexts/service";
@@ -7,11 +10,12 @@ function completedList() {
   const [dataTasks, setDataTasks] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedTask, setSelectedTask] = useState(null);
-
   const service = useService();
+
   useEffect(() => {
     getDataConcluided();
   }, []);
+
   async function getDataConcluided() {
     setLoading(true);
     try {
@@ -22,7 +26,6 @@ function completedList() {
         const dateFinally = item.dateFinally;
         getStatusFromDate(dateConcluide, dateFinally);
       });
-      console.log("data", data);
     } finally {
       setLoading(false);
     }
@@ -30,10 +33,10 @@ function completedList() {
 
   function formatDate(dateString) {
     const date = new Date(dateString);
-    const dia = String(date.getDate()).padStart(2, "0");
-    const mes = String(date.getMonth() + 1).padStart(2, "0");
-    const ano = date.getFullYear();
-    return `${dia}-${mes}-${ano}`;
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+    return `${day}-${month}-${year}`;
   }
   function getStatusFromDate(dataConcluided, dateFinally) {
     dataConcluided = new Date(dataConcluided);

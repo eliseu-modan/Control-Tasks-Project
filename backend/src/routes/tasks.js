@@ -25,5 +25,10 @@ tasks.get(
   authMiddleware,
   createTasks.getTasksPermanent
 );
+tasks.delete(
+  `/auth/deleteTaskPermanent/:taskSelected`,
+  authMiddleware,
+  createTasks.deleteTaskPermants
+);
 
 module.exports = tasks;

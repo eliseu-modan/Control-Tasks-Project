@@ -16,7 +16,7 @@ const { Sider } = Layout;
 function PrivateSider({ toggleCollapsed, ...props }) {
   const { clearAuthenticationAsync } = useAuthentication();
   const navigate = useNavigate();
-  const theme = "light";
+  const theme = "dark";
 
   function filterRoutes(routes) {
     return routes
@@ -84,7 +84,7 @@ function PrivateSider({ toggleCollapsed, ...props }) {
                   icon: <LogoutOutlined />,
                   key: "logout",
                   label: "Sair",
-                  style: { color: "red" },
+                  style: { color: "white" },
                 },
               ]}
             />

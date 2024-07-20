@@ -3,8 +3,8 @@ generator client {
 }
 
 datasource db {
-    provider = "postgresql"
-    url      = "postgresql://postgres:postgres@10.234.209.105:5432/eliseu_dev?schema=public"
+    provider = "mysql"
+    url      = "mysql://root:1357.modanesi@localhost:3306/systemtask"
 }
 
 model CreateMessages {
