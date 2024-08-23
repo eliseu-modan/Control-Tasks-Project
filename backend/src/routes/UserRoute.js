@@ -1,8 +1,8 @@
 const express = require("express");
 const userRoutes = express.Router();
-const userController = require("../controllers/Login.js");
-const registerController = require("../controllers/Register.js");
-const { isAdmin } = require("../services/authAdmin.js");
+const userController = require("../controllers/ControllerLogin.js");
+const registerController = require("../controllers/ControllerRegister.js");
+const { isAdmin } = require("../middlewares/authAdmin.js");
 
 userRoutes.post("/auth/login", userController.login);
 userRoutes.post("/auth/register", isAdmin, registerController.register);

@@ -1,8 +1,8 @@
 const express = require("express");
 const tasks = express.Router();
-const createTasks = require("../controllers/CreateTasks.js");
-const authMiddleware = require("../services/authMiddleware.js");
-tasks.post("/auth/tasks", authMiddleware, createTasks.create);
+const createTasks = require("../controllers/ControllerTasks.js");
+const authMiddleware = require("../middlewares/authMiddleware.js");
+tasks.post("/auth/tasks", authMiddleware, createTasks.createTask);
 tasks.get("/auth/getTasks", authMiddleware, createTasks.getTasks);
 tasks.delete(
   `/auth/removeTasks/:taskSelected`,
